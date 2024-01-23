@@ -1,0 +1,37 @@
+.pad {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.flexer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.favcolorL div {
+    color: white;
+    display: flex;
+    text-wrap: wrap;
+    flex-wrap: nowrap;
+    text-align: start;
+    font-size: 7.5px;
+}
+
+.imageL {
+    border-style: inset;
+    border-color: darkgrey;
+    float: left;
+    height: 175px;
+    width: 125px;
+    margin-right: 20px;
+}
+
+.cardL {
+    width: 350px;
+    height: 225px;
+    background-color: black;
+    border-style: outset;
+    border-color: darkgray;
+    border-width: 3px;
+}
+
