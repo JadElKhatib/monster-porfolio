@@ -1,13 +1,17 @@
 import React from 'react';
-import { Card, Typography } from 'antd';
-const { Title } = Typography;
+import { Card } from 'antd';
 import './liked.css';
 
 export function Liked(props) {
     const likedList = props.likedList;
     const setLikedList = props.setLikedList;
-    const SCedList = props.SCedList;
-    const setSCedList = props.setSCedList;
+
+    const removeFromLikedList = (info) => {
+        let newLikedList = [...likedList];
+        const index = newLikedList.indexOf(info);
+        newLikedList.splice(index,1);
+        setLikedList(newLikedList);
+    }
 
     return (
         <>
@@ -32,7 +36,7 @@ export function Liked(props) {
                                             <span style={{ color: "white" }}>
                                                 <span style={{ color: "grey" }}>Description:</span>
                                                 &nbsp;
-                                                {info.description}
+                                                {info.description.slice(0,200)}
                                             </span>
                                         </div>
                                         <br />
@@ -40,10 +44,13 @@ export function Liked(props) {
                                             <span style={{ color: "white" }}>
                                                 <span style={{ color: "grey" }}>Location:</span>
                                                 &nbsp;
-                                                {info.location}
+                                                {info.location.slice(0,120)}
                                             </span>
                                         </div>
                                         <br />
+                                        <div>
+                                            <button className="removebutton" onClick={() => removeFromLikedList(info)}>Remove</button>
+                                        </div>
                                     </div>
                                 </Card>
                             <br />

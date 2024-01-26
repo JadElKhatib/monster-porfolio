@@ -1,0 +1,60 @@
+.lister {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 70px;
+    align-items: center;
+    margin-left: 250px;
+}
+
+.title {
+    font-style: none;
+    font-variant: none;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.topbar {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 100px;
+    margin-top: 20px;
+}
+
+.name {
+    background: linear-gradient(to right, rgb(255, 30, 0), rgb(255,40,0) ,rgb(255, 50, 0), rgb(255, 60, 0), rgb(255,70,0) , rgb(255, 80, 0), rgb(255, 90, 0), rgb(255,100,0) ,rgb(255, 110, 0), rgb(255, 120, 0), rgb(255,130,0) , rgb(255, 140, 0), rgb(255, 150, 0), rgb(255,160,0) ,rgb(255, 160, 0), rgb(255,150, 0), rgb(255,140,0) ,rgb(255,130, 0), rgb(255,120, 0), rgb(255,110,0) , rgb(255,100, 0), rgb(255,90,0) ,rgb(255,80, 0), rgb(255,70, 0), rgb(255,60,0) , rgb(255, 50, 0), rgb(255,40, 0), rgb(255,30,0));
+    font-size: 30px;
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 3s linear infinite;
+}
+
+.nameOther {
+    background: linear-gradient(to right, rgb(0,30,255), rgb(0,40,255) ,rgb(0,50,255), rgb(0,60,255), rgb(0,70,255) , rgb(0,80,255), rgb(0,90,255), rgb(0,100,255) ,rgb(0,110,255), rgb(0,120,255), rgb(0,130,255) , rgb(0,140,255), rgb(0,150,255), rgb(0,160,255) ,rgb(0,160,255), rgb(0,150,255), rgb(0,140,255) ,rgb(0,130, 255), rgb(0,120, 255), rgb(0,110,255) , rgb(0,100, 255), rgb(0,90,255) ,rgb(0,80,255), rgb(0,70, 255), rgb(0,60,255) , rgb(0,50,255), rgb(0,40,255), rgb(0,30,255));
+    font-size: 30px;
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 3s linear infinite;
+}
+
+.names {
+    background: linear-gradient(to right, rgb(255, 200, 0), rgb(255,190,0) ,rgb(255, 180, 0), rgb(255, 170, 0), rgb(255,160,0) , rgb(255, 150, 0), rgb(255, 140, 0), rgb(255,130,0) ,rgb(255, 120, 0), rgb(255,130, 0), rgb(255,140,0) ,rgb(255,150, 0), rgb(255,160, 0), rgb(255,170,0) , rgb(255,180, 0), rgb(255,190, 0), rgb(255,200,0));
+    font-size: 11px;
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 3s linear infinite;
+}
+
+@keyframes move {
+    to {
+        background-position: 200% center;
+    }
+}

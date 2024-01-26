@@ -1,15 +1,15 @@
-.pad {
+.padSC {
     padding-left: 25px;
     padding-top: 10px;
 }
 
-.flexer {
+.flexerSC {
     width: 75%;
     display: flex;
     flex-wrap: wrap;
 }
 
-.favcolorL div {
+.favcolorSC div {
     color: white;
     display: flex;
     text-wrap: wrap;
@@ -18,7 +18,7 @@
     font-size: 7.5px;
 }
 
-.imageL {
+.imageSC {
     border-style: inset;
     border-color: darkgrey;
     float: left;
@@ -27,7 +27,7 @@
     margin-right: 20px;
 }
 
-.cardL {
+.cardSC {
     width: 350px;
     height: 225px;
     background-color: black;
@@ -36,6 +36,15 @@
     border-width: 3px;
 }
 
-.removebutton {
-    font-size: 8px;
+.removebuttonSC {
+    font-size: 12px;
+    margin-left: 30px;
+}
+
+.adder {
+    text-wrap: nowrap;
+}
+
+.buttons div{
+    display: flex;
 }

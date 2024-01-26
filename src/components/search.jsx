@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Input, Card, Typography } from 'antd';
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 const { Title } = Typography;
@@ -8,6 +8,7 @@ export function Search(props) {
     const [mode, setMode] = useState('');
     const [fullArr, setFullArr] = useState([]);
     const [count, setCount] = useState(0);
+    const [backgroundimage, setBackgroundImage] = useState("https://i.pinimg.com/originals/42/83/6a/42836adf0826dbfa27034fc55566d3a2.gif");
 
     const likedList = props.likedList;
     const setLikedList = props.setLikedList;
@@ -28,10 +29,12 @@ export function Search(props) {
                 name: info.name,
                 description: info.description,
                 location: info.region + ", " + info.location,
-                image: info?.image ? info.image : "https://upload.wikimedia.org/wikipedia/commons/5/55/Question_Mark.svg"
+                image: info?.image ? info.image : "https://upload.wikimedia.org/wikipedia/commons/5/55/Question_Mark.svg",
+                kills: 0
             })
         })
         setFullArr(newFullArr);
+        setBackgroundImage("/src/search1.gif");
     }
 
     const accordion = () => {
@@ -40,21 +43,34 @@ export function Search(props) {
 
     const addtoLikedList = (info) => {
         const newLikedList = [...likedList];
-        if(!newLikedList.includes(info)) {
+        if (!newLikedList.includes(info)) {
             newLikedList.push(info);
         }
-        console.log(newLikedList);
         setLikedList(newLikedList);
     }
 
     const addtoSCedList = (info) => {
         const newSCedList = [...SCedList];
-        if(!newSCedList.includes(info)) {
+        if (!newSCedList.includes(info)) {
             newSCedList.push(info);
         }
-        console.log(newSCedList);
         setSCedList(newSCedList);
     }
+
+    useEffect(() => {
+        const body = document.body;
+        if (mode === 'Elden Ring') {
+            body.style.backgroundSize = "cover";
+            body.style.backgroundSize = "1199px 715px";
+            body.style.backgroundPositionX = "320px";
+            body.style.backgroundPositionY = "-20px";
+            body.style.backgroundRepeat = "no-repeat";
+            body.style.backgroundAttachment = "fixed";
+            body.style.backgroundColor = "black";
+            body.style.overflowX = "hidden";
+        }
+        document.body.style.backgroundImage = `url(${backgroundimage})`;
+    }, [backgroundimage])
 
     return (
         <>
@@ -100,17 +116,17 @@ export function Search(props) {
                                         <button className="button" onClick={accordion}>
                                             {count % 2 === 0 ?
                                                 (
-                                                    <div style={{color: "black"}}>
+                                                    <div style={{ color: "black" }}>
                                                         <span className="buttonstyle">Available Options</span>
-                                                        <span className="buttonicon"><CaretDownOutlined/></span>
+                                                        <span className="buttonicon"><CaretDownOutlined /></span>
                                                     </div>
                                                 )
                                                 :
                                                 (
                                                     <>
-                                                        <div style={{color: "black"}}>
+                                                        <div style={{ color: "black" }}>
                                                             <span className="buttonstyle">Available Options</span>
-                                                            <span className="buttonicon"><CaretUpOutlined/></span>
+                                                            <span className="buttonicon"><CaretUpOutlined /></span>
                                                         </div>
                                                     </>
                                                 )
@@ -129,7 +145,7 @@ export function Search(props) {
                                                             <button disabled={likedList.some((monster) => monster.key === info.key)} className="buttonIn" onClick={() => addtoLikedList(info)}>Like</button>
                                                         </div>
                                                         <div>
-                                                            <button disabled={SCedList.some((monster) => monster.key === info.key)}className="buttonIn" onClick={() => addtoSCedList(info)}>Slaughtered / Collected</button>
+                                                            <button disabled={SCedList.some((monster) => monster.key === info.key)} className="buttonIn" onClick={() => addtoSCedList(info)}>Slaughtered / Collected</button>
                                                         </div>
                                                     </div>
                                                 )
