@@ -46,6 +46,7 @@ export function Search(props) {
         if (!newLikedList.includes(info)) {
             newLikedList.push(info);
         }
+        localStorage.setItem("likedList",JSON.stringify(newLikedList));
         setLikedList(newLikedList);
     }
 
@@ -54,6 +55,7 @@ export function Search(props) {
         if (!newSCedList.includes(info)) {
             newSCedList.push(info);
         }
+        localStorage.setItem("SCedList",JSON.stringify(newSCedList));
         setSCedList(newSCedList);
     }
 

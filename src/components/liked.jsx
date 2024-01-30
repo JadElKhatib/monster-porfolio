@@ -10,6 +10,7 @@ export function Liked(props) {
         let newLikedList = [...likedList];
         const index = newLikedList.indexOf(info);
         newLikedList.splice(index,1);
+        localStorage.setItem("likedList",JSON.stringify(newLikedList));
         setLikedList(newLikedList);
     }
 

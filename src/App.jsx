@@ -41,9 +41,12 @@ const pages = [
 ]
 
 function App() {
+  const savedLikedList = localStorage.getItem("likedList") ? JSON.parse(localStorage.getItem("likedList")) : [];
+  const savedSCedList = localStorage.getItem("SCedList") ? JSON.parse(localStorage.getItem("SCedList")) : [];
+  
   const [mode, setMode] = useState('');
-  const [likedList,setLikedList] = useState([]);
-  const [SCedList,setSCedList] = useState([]);
+  const [likedList,setLikedList] = useState(savedLikedList);
+  const [SCedList,setSCedList] = useState(savedSCedList);
 
   const [backgroundimage,setBackgroundImage] = useState("https://i.redd.it/9gus5pd7tl9z.gif");
 

@@ -11,6 +11,7 @@ export function SCed(props) {
         const newSCedList = [...SCedList];
         const index = newSCedList.indexOf(info);
         newSCedList.splice(index,1);
+        localStorage.setItem("SCedList",JSON.stringify(newSCedList));
         setSCedList(newSCedList);
     }
 
